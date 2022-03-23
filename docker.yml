@@ -1,0 +1,16 @@
+# action.yml
+name: 'Even or Odd'
+description: 'run a docker script with the time'
+inputs:
+  given_number:  # id of input
+    description: 'specifed number'
+    required: true
+    default: '2222'
+outputs:
+  time: # id of output
+    description: 'The time we executed'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.given_number}}
